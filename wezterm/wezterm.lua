@@ -20,7 +20,7 @@ config.color_scheme = 'Gruvbox Dark (Gogh)'
 -- background
 config.background = {
     {
-        source = {File = "/home/shuu/Downloads/illustration-anime-character-rain.jpg"},
+        source = {File = "/home/shuu/dotfiles/wezterm/background/girl_rain.jpg"},
         opacity = 1,
         hsb = {
             brightness = 0.1
