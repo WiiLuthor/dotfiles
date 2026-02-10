@@ -1,14 +1,14 @@
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
-
+local keys = require 'keys'
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices.
 
 -- For example, changing the initial geometry for new windows:
-config.initial_cols = 120
-config.initial_rows = 28
+config.initial_cols = 200
+config.initial_rows = 50
 
 -- or, changing the font size and color scheme.
 config.font_size = 15
@@ -22,7 +22,7 @@ config.background = {
     {
         source = {File = "/home/shuu/dotfiles/wezterm/background/girl_rain.jpg"},
         opacity = 1,
-        hsb = {
+hsb = {
             brightness = 0.1
         },
         horizontal_align = "Center"
@@ -32,6 +32,8 @@ config.hide_tab_bar_if_only_one_tab = true
 config.enable_tab_bar = false
 config.show_tabs_in_tab_bar = false
 config.window_decorations = "RESIZE"
+-- Key 
+keys.apply_to_config(config)
 
 -- Finally, return the configuration to wezterm:
 return config
