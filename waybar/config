@@ -1,0 +1,111 @@
+{
+    "layer": "top",
+    "position": "top",
+    "modules-left": ["custom/media"],
+    "modules-right": ["custom/keyboard", "clock", "network", "battery", "pulseaudio","custom/quit"],
+    "modules-center": ["sway/workspaces"],
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%a %b %d}",
+        "tooltip": false
+    },
+    // "battery": {
+    //     "states": {
+    //         "good": 95,
+    //         "warning": 30,
+    //         "critical": 15
+    //     },
+    //     "bat":"BAT1",
+    //     "format": "{icon} {capacity}%",
+    //     "format-charging": " {capacity}%",
+    //     "format-plugged": " {capacity}%",
+    //     "format-discharging": " {capacity}%",
+    //     "format-alt": "{icon} {time}",
+    //     "format-icons": ["", "", "", "", ""]
+    // },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": " {essid}",
+        "format-ethernet": " {ifname}",
+        "format-disconnected": "",
+        "tooltip-format-wifi": "{signalStrength}%",
+        "max-length": 20
+    },
+    "custom/media": {
+        "format": "{}",
+        "interval": 1,
+        "exec": "sh $HOME/.config/waybar/get_media.sh"
+    },
+    // "custom/keyboard": {
+    //     "format": " {}",
+    //     "interval": 1,
+    //     "exec": "sh $HOME/.config/waybar/get_kbdlayout.sh"
+    // },
+    // "pulseaudio": {
+    //     "format": "{icon} {volume}%",
+    //     "format-bluetooth": "{icon} {volume}%",
+    //     "format-muted": "",
+    //     "format-icons": {
+    //         "headphone": "",
+    //         "hands-free": "",
+    //         "headset": "",
+    //         "phone": "",
+    //         "portable": "",
+    //         "car": "",
+    //         "default": ["", ""]
+    //     },
+    //     "scroll-step": 1,
+    //     "on-click": "pavucontrol"
+    // },
+    "custom/quit": {
+        "format": "",
+        "on-click": "swaynag -f 'Terminus (TTF)'  -t warning -m 'Do you really want to exit sway?' -b 'Yes, exit sway' 'swaymsg exit'"
+    },
+    // New config
+    "battery": {
+    "states": {
+        "good": 95,
+        "warning": 30,
+        "critical": 15
+    },
+    "bat": "BAT1",
+    "format": "{icon} {capacity}%",
+    "format-charging": "󱐋 {capacity}%",     // Icon sét Nerd Font
+    "format-plugged": " {capacity}%",      // Icon phích cắm
+    "format-discharging": "󰂃 {capacity}%",  // Icon pin đang xả
+    "format-alt": "{icon} {time}",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    }, 
+
+"pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} 󰂯 {volume}%", // Icon Bluetooth Nerd Font
+    "format-muted": "󰝟",                      // Icon tắt tiếng
+    "format-icons": {
+        "headphone": "󰋋",
+        "hands-free": "󰋎",
+        "headset": "󰋎",
+        "phone": "󰏲",
+        "portable": "󰏲",
+        "car": "󰄋",
+        "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol"
+    },
+    "sway/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "format-icons": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "urgent": "",
+        "active": "",
+        "default": ""
+    },
+    "sort-by-number": true
+    }
+}

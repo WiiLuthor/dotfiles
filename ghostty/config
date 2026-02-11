@@ -1,0 +1,2 @@
+config-file = "style.conf"
+config-file = "keybind.conf"
