@@ -16,12 +16,17 @@ set $menu wmenu-run
 
 ### Output configuration
 #
-output * bg /home/shuu/Downloads/girl_1.jpg fill
+output * bg /home/wii/.config/sway/background/girl_1.jpg fill
 
-focus output eDP-1
+output eDP-1 {
+	mode 1920x1080@60.027Hz
+	position 0 0
+
+}
 
 output HDMI1 {
-    mode 1920x1080@60.000Hz
+	mode 1920x1080@60.000Hz
+	position 0 1920
 }
 
 ### Input configuration
@@ -73,6 +78,8 @@ output HDMI1 {
 #   player
     bindsym XF86AudioPlay exec playerctl play-pause
     bindsym XF86AudioPause exec playerctl play-pause
+    bindsym XF86AudioNext exec playerctl next
+    bindsym XF86AudioPrev exec playerctl previous
 # Moving around:
 #
     # Move your focus around
@@ -200,12 +207,19 @@ bindsym $mod+r mode "resize"
     # Special key to take a screenshot with grim
     bindsym Print exec grim -g "$(slurp)" - | wl-copy --type image/png
     #turn off
-    bindsym Alt+p exec poweroff
+    bindsym shift+Alt+p exec poweroff
     # logout
     bindsym Alt+l exec swaymsg exit 
     # wofi
     bindsym Alt+Space exec wofi --show drun
-#
+	#screen
+	bindsym $mod+p mode "screen"
+mode "screen" {
+	bindsym $mod+1 exec swaymsg output eDP-1 toggle
+	bindsym $mod+2 exec swaymsg output HDMI-A-1 toggle 
+	bindsym Escape mode "default"
+}
+
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
