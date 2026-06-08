@@ -14,7 +14,7 @@ set $menu wmenu-run
 
 ### Output configuration
 #
-output * bg /home/wii/.config/sway/background/girl_1.jpg fill
+output * bg /home/wii/.config/sway/background/mountain.jpg fill
 
 output eDP-1 {
 	mode 1920x1080@60.027Hz
